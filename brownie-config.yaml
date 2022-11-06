@@ -1,0 +1,26 @@
+dependencies:
+  #repo to downlaod from github
+  - smartcontractkit/chainlink-brownie-contracts@1.1.1
+compiler:
+  solc:
+    version: 0.6.6
+    rempappings:
+      - '@chainlink=./node_modules/@chainlink'
+dotenv: .env
+wallets:
+  from_key: ${PRIVATE_KEY}
+networks:
+  default: development
+  mumbai:
+    eth_usd_price_feed: '0x0715A7794a1dc8e42615F059dD6e406A6594651A'
+    verify: True
+  goerli:
+    eth_usd_price_feed: '0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e'
+    verify: True
+  mainnet-fork-dev:
+    eth_usd_price_feed: '0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419'
+    verify: False
+  development:
+    verify: False
+  ganache-local:
+    verify: False
